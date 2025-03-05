@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .button{
+        font-size: 16px;
+        color: aliceblue;
+        background-color: black;
+        border: none;
+        padding: 5px 12px;
+        margin-left: 5px;
+    }
+    .button:hover{
+        background-color: red;
+
+    }
+    .checkbox{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .one {
+            background-color: #32216e;
+            color: white;
+            padding: 20px;
+            border-radius: 8px; 
+            width:60%;
+            border: 2px double #445ef2;
+            box-shadow: 4px 2px 30px #445EF2;
+        }
+        body{
+            background-color: #221426;
+            
+            font-family: Arial, sans-serif;
+        }
+        .one h1{
+            
+        }
+        input[type="text"]{
+            padding: 5px;
+            border: 2px solid;
+            height: 20px;
+            font-size: 15px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+</style>
+<body>
+    <center>
+        <div class="one">
+        <h1>TODO LIST</h1>
+        <input type="text" id="input" placeholder="Enter Your Task">
+        <button onclick="additems()">Add</button>
+        <ul id="listitems">
+           
+        </ul>
+    </div>
+</center>
+<script>
+    var ul=document.getElementById("listitems")
+    function additems(){
+        if(input.value===""){
+            alert("Enter Your Task")
+            return;
+        }
+        var h=document.createElement("h2")
+        h.textContent=input.value
+        
+        var b=document.createElement("button")
+        b.innerHTML="Deleted"
+        b.className="button"
+        
+        b.onclick=deleteditems
+        var checkbox=document.createElement("input")
+        checkbox.type="checkbox"
+        checkbox.className="checkbox"
+        
+        h.appendChild(checkbox)
+        h.appendChild(b)
+        ul.appendChild(h)
+    }
+    function deleteditems(event){
+        event.target.parentElement.remove()
+    }
+</script>
+</body>
+</html>
